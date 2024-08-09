@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package video;
+
+service VideoStream {
+  rpc StreamFrames(Empty) returns (stream Frame) {}
+}
+
+service Hello {
+  rpc callPrc(Req) returns (Resp) {}
+}
+
+message Empty {}
+
+message Frame {
+  bytes data = 1;
+}
+
+message Req {
+  int32 message = 1;
+}
+
+message Resp {
+  int32 message = 1;
+}
